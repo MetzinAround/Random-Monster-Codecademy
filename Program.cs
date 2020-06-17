@@ -15,7 +15,7 @@ namespace ExquisiteCorpse
       int bodyNum = TranslateToNumber(body);
       int footNum = TranslateToNumber(feet);
     } 
-
+     //this is the method to call to make a random monster. 
     static void RandomMode() 
     {
       Random randomNumber = new Random();
@@ -24,7 +24,7 @@ namespace ExquisiteCorpse
       int  feet = randomNumber.Next(1, 4);
       SwitchCase (head, body, feet);
     }
-
+     // If you call this method, you can dictate which body part you want via a number. 
     static void SwitchCase( int headNum, int bodyNum, int feetNum)
     {
       switch (headNum)
@@ -64,7 +64,8 @@ namespace ExquisiteCorpse
           break;
       }
     }
-
+     //This is the way to cut down on reptative code. We take the string in from the BuildACreature Method and translate it 
+     //to a number that works with the SwitchCase method.
     static int TranslateToNumber(string creature)
     {
       switch(creature) 
@@ -79,7 +80,7 @@ namespace ExquisiteCorpse
           return 1;
       }
     }
-    
+    // These are the monster body parts that get called via each individual method.
     static void GhostHead()
     {
       Console.WriteLine("     ..-..");
